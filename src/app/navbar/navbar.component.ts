@@ -9,6 +9,7 @@ export class NavbarComponent {
   logo: string = 'Netflix';
   navbarLinks: string[] = ['Home', 'Movies', 'TVShow', 'About', 'contact us'];
   language: string = 'en-Us';
+  isLogin:boolean=false;
   //'ar-SA'
   constructor() {}
 

@@ -7,6 +7,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { FooterComponent } from './footer/footer.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
+import { TvShowComponent } from './tv-show/tv-show.component';
+import { AboutComponent } from './about/about.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +20,17 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     HomeComponent,
     MoviesComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent,
+    TvShowComponent,
+    AboutComponent,
+    ContactUsComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css'],
+  selector: 'app-movie-details',
+  templateUrl: './movie-details.component.html',
+  styleUrls: ['./movie-details.component.css'],
 })
-export class MoviesComponent {
-  searchValue: string = 'ali';
-  toggleData: boolean = true;
-  imagePath: string = 'https://image.tmdb.org/t/p/w500';
+export class MovieDetailsComponent implements OnInit {
   allMovies: any[] = [
     {
       adult: false,
@@ -371,15 +369,19 @@ export class MoviesComponent {
       showDetails: true,
     },
   ];
+  selectedmovie: any;
+  imagePath: string = 'https://image.tmdb.org/t/p/w500';
+  constructor(public route: ActivatedRoute) {}
 
-  constructor() {}
-
-  toggleDescription(movieId: number) {
+  ngOnInit(): void {
+    let movieId = parseInt(this.route.snapshot.paramMap.get('id')!);
     for (const movie of this.allMovies) {
       if (movie.id == movieId) {
-        movie.showDetails = !movie.showDetails;
+        this.selectedmovie = movie;
       }
     }
-    // this.toggleData=!this.toggleData;
+
+    console.log(this.selectedmovie);
+    
   }
 }

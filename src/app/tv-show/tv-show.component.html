@@ -1,0 +1,21 @@
+<div class="row mt-4">
+  <div
+    class="card col-lg-4 mx-2"
+    *ngFor="let tv of allTvShows"
+    style="width: 250px"
+  >
+    <img
+      src="{{ imagePath + tv.poster_path }}"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ tv.name }}</h5>
+      <p class="card-text">
+        {{ tv.overview }}
+      </p>
+      <!-- <a href="#" class="btn btn-warning">show/hide details</a> -->
+      <button class="btn btn-primary">Watch</button>
+    </div>
+  </div>
+</div>
