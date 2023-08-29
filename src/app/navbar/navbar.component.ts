@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-navbar', //component directive
@@ -7,13 +8,10 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   logo: string = 'Netflix';
-  navbarLinks: string[] = ['Home', 'Movies', 'TVShow', 'About', 'contact us'];
-  language: string = 'en-Us';
+
   isLogin:boolean=false;
   //'ar-SA'
   constructor() {}
 
-  changeLanguage() {
-    this.language = this.language == 'en-Us' ? 'ar-SA' : 'en-Us';
-  }
+  
 }

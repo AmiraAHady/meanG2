@@ -1,6 +1,23 @@
+<div class="row mt-5 ">
+  <div class="col-lg-12">
+    <button
+      class="btn btn-outline-success my-2 my-sm-0 float-end"
+      (click)="changeLanguage()"
+    >
+      {{ language }}
+    </button>
+  </div>
+</div>
+<div class="row">
+  <mat-paginator [length]="totalMovies"
+  [pageSize]="pageSize"
+  aria-label="Select page"
+  (page)="changePage($event)"
+  >
+</mat-paginator>
+</div>
 <div class="row mt-5 w-75">
-  <input type="text" class="form-control" [(ngModel)]="searchValue" />
-  <h4>{{ searchValue }}</h4>
+  <input type="text" class="form-control" [(ngModel)]="setSearchValue" />
 </div>
 <div class="row mt-4">
   <div
@@ -8,7 +25,7 @@
     *ngFor="let movie of allMovies"
     style="width: 250px"
   >
-    <a [routerLink]="['/moviedetails',movie.id]">
+    <a [routerLink]="['/moviedetails', movie.id]">
       <img
         src="{{ imagePath + movie.poster_path }}"
         class="card-img-top"
@@ -28,3 +45,4 @@
     </div>
   </div>
 </div>
+
