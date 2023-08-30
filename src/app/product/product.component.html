@@ -1,0 +1,20 @@
+<div class="row mt-4">
+  <div
+    class="card col-lg-4 mx-2"
+    *ngFor="let product of allProducts"
+    style="width: 250px"
+  >
+    <a [routerLink]="['/productdetails',product.id]">
+      <img src="{{ product.image }}" class="card-img-top" alt="..." />
+    </a>
+
+    <div class="card-body">
+      <h5 class="card-title">{{ product.title }}</h5>
+      <!-- <p class="card-text">
+          {{ product.description }}
+        </p> -->
+      <!-- <a href="#" class="btn btn-warning">show/hide details</a> -->
+      <button class="btn btn-primary">Add To Cart</button>
+    </div>
+  </div>
+</div>
